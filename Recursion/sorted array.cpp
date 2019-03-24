@@ -1,29 +1,27 @@
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-int ifsorted(int *a,int n)
+bool sorted(long long *a,int size,int i=0)
 {
-    if(n==1)
-        return true;
-    else
-    {
-        if(ifsorted(a,n-1)==true && a[n-2]<a[n-1])
-            return true;
-        else
-            return false;
-    }
-}
+	if(i==size-1)
+		return true;
+	if(a[i+1]>=a[i])
+		sorted(a,size,i+1);
+	else
+		return false;
 
+}
 int main()
 {
-    int a[20],n;
-    cin>>n;
-    for(int i=0;i<n;i++)
-        cin>>a[i];
-    if(ifsorted(a,n)==true)
-        cout<<"true";
-    else
-        cout<<"false";
-
-    return 0;
+	int n;
+	cin>>n;
+	long long a[10005];
+	for(int i=0;i<n;i++)
+	{
+		cin>>a[i];
+	}
+	if(sorted(a,n))
+		cout<<"true";
+	else
+		cout<<"false";
+	return 0;
 }
