@@ -5,10 +5,12 @@ int main()
     int t;
     int n;
     int x;
-    cin>>t>>n>>x;
+    cin>>t;
     int a[100];
     int sum=0;
     while(t--){
+        cin>>n>>x;
+        sum=0;
     for(int i=0;i<n;i++)
     {
         cin>>a[i];
@@ -51,7 +53,7 @@ int main()
 
 
     }
-    cout<<ans;
+    cout<<ans<<endl;
     }
     return 0;
 
